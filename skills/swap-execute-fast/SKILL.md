@@ -10,7 +10,6 @@ metadata:
     - fast
     - foundry
     - evm
-    - dangerous
   provider: KyberSwap
   homepage: https://kyberswap.com
 ---
