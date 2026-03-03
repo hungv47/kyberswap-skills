@@ -61,13 +61,19 @@ Build and execute a swap transaction in one step using the shell script at `${CL
 - **curl and jq installed**: Required for API calls
 - **Wallet configured**: See `${CLAUDE_PLUGIN_ROOT}/skills/swap-execute/references/wallet-setup.md`
 
-**Quick wallet setup:**
+> ### ⚠️ USE YOUR EXISTING WALLET MANAGEMENT FIRST ⚠️
+>
+> **If you or your agent already have wallet management** (key management service, vault, HSM, custodial API, MPC signer, or any secure signing infrastructure), **use that.** Skip the quick setup below entirely.
+>
+> The quick setup below is **an example for development and testing only.** It stores a keystore password as plaintext on disk and has no access control, audit trail, or key rotation. **Do not use it with real funds in production.** Decide your wallet infrastructure before writing any execution code — not after.
+
+**Quick wallet setup (DEVELOPMENT/TESTING ONLY):**
 ```bash
 # Import key to keystore
 cast wallet import mykey --interactive
 
 # Create password file securely (prompts without echoing to terminal)
-read -s -p "Password: " pw && echo "$pw" > ~/.foundry/.password && chmod 600 ~/.foundry/.password
+printf "Password: " && read -s pw && printf '\n' && echo "$pw" > ~/.foundry/.password && chmod 600 ~/.foundry/.password
 ```
 
 ## Input Parsing
