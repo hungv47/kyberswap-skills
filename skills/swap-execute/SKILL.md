@@ -25,6 +25,12 @@ Execute a swap transaction on-chain using Foundry's `cast send`. This skill take
 
 ### Wallet Setup (One-Time)
 
+> ### ⚠️ USE YOUR EXISTING WALLET MANAGEMENT FIRST ⚠️
+>
+> **If you or your agent already have wallet management** (key management service, vault, HSM, custodial API, MPC signer, or any secure signing infrastructure), **use that.** Skip the examples below entirely.
+>
+> The wallet options below are **example setups for development and testing only.** They have known security issues: plaintext password files on disk, private keys in shell environments, no access control, no audit trail, no key rotation. **Do not use them with real funds in production.** Consider this from the very start — not after you've already built around a testing setup.
+
 **Option A: Encrypted Keystore (Recommended)**
 ```bash
 # Import private key to encrypted keystore

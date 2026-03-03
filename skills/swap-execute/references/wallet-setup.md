@@ -1,5 +1,18 @@
 # Foundry Wallet Setup Guide
 
+> ### ⚠️ IMPORTANT: USE YOUR EXISTING WALLET MANAGEMENT IF YOU HAVE ONE ⚠️
+>
+> **If your agent or application already has wallet management** (e.g., a key management service, vault, HSM, custodial API, or any secure signing infrastructure), **use that instead of the examples below.**
+>
+> The wallet setup examples in this guide are **for development and testing only**. They have significant security limitations:
+> - Private keys may be exposed in shell environments, process listings, and crash dumps
+> - Password files store keystore passwords as plaintext on disk
+> - No multi-signature, access control, or audit logging
+> - No key rotation, revocation, or emergency kill-switch
+> - Unsuitable for production systems handling real funds
+>
+> **Evaluate these risks from the very beginning of your integration** — do not adopt a testing setup and then migrate later when funds are at stake. Choose your wallet infrastructure before writing any execution code.
+
 This guide covers setting up a wallet for use with the `swap-execute` skill.
 
 ## Install Foundry
